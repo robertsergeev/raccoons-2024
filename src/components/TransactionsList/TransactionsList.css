@@ -1,0 +1,42 @@
+.transactions-list {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.transaction-panel h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.transaction-panel p {
+    color: #666;
+    margin-top: -10px;
+    font-size: 0.9em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 12px 8px;
+    font-size: 0.9em;
+}
+
+table th {
+    color: #999;
+    text-transform: uppercase;
+}
+
+table tr:not(:last-child) {
+    border-bottom: 1px solid #eaeaea;
+}

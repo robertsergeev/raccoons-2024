@@ -1,0 +1,35 @@
+.description-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.8em;
+    background-color: #cccccc;
+}
+
+.method-cell, .date-cell {
+    color: #666;
+}
+
+.amount-cell {
+    font-weight: bold;
+    text-align: right;
+}
+
+.amount-cell.positive {
+    color: #28a745;
+}
+
+.amount-cell.negative {
+    color: #d9534f;
+}

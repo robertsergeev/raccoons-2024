@@ -1,5 +1,6 @@
 .transactions-list {
     max-width: 700px;
+    width: 100%;
     margin: 0 auto;
     background-color: #ffffff;
     border-radius: 8px;

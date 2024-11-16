@@ -1,15 +1,10 @@
 import React from 'react';
 import './CategoriesCard.css';
+import { useSelector } from 'react-redux';
 
 const CategoriesCard = () => {
-    const transactions = [
-        { id: 0, name: 'mcdonalds', category: 'food', amount: 15, date: Date.now() },
-        { id: 1, name: 't shirt', category: 'shopping', amount: 100, date: Date.now() },
-        { id: 2, name: 'fridge', category: 'home', amount: 450, date: Date.now() },
-        { id: 3, name: 'taxi', category: 'transport', amount: 20, date: Date.now() },
-        { id: 3, name: 'yo', category: 'other', amount: 200, date: Date.now() },
-    ]
-
+  const {transactions} = useSelector(state => state.transactions)
+  
   // Группируем транзакции по категориям
   const categoryTotals = transactions.reduce((acc, transaction) => {
     acc[transaction.category] = (acc[transaction.category] || 0) + transaction.amount;

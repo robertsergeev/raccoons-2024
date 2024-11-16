@@ -11,10 +11,9 @@ const TransactionItem = ({ transaction }) => {
                 <div className="icon">{name.charAt(0)}</div>
                 <span>{name}</span>
             </td>
-            <td className="method-cell">{method}</td>
             <td className="date-cell">{date}</td>
             <td className={amountClass}>
-                {amount >= 0 ? `+ $${amount.toFixed(2)}` : `- $${Math.abs(amount).toFixed(2)}`}
+                {`$${amount.toFixed(2)}`}
             </td>
         </tr>
     );

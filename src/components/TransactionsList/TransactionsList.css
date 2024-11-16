@@ -49,6 +49,11 @@ table td {
     font-size: 1rem;
 }
 
+.average-expense{
+    text-transform: none;
+
+}
+
 @media (max-width: 768px) {
     .transactions-list {
         padding: 16px;

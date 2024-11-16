@@ -9,7 +9,7 @@ import "./CreateTransactionForm.css"
 const CreateTransactionForm = () => {
     const [name, setName] = useState('')
     const [category, setCategory] = useState('')
-    const [amount, setAmount] = useState()
+    const [amount, setAmount] = useState('')
     const dispatch = useDispatch()
 
     const addTransaction = (e) => {

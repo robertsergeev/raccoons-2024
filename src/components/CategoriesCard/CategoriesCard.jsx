@@ -21,7 +21,7 @@ const CategoriesCard = () => {
     }));
 
     const sortedCategories = useMemo(() => {
-        return categories.sort((a, b) => a.percentage - b.percentage).reverse()
+        return categories.sort((a, b) => a.percentage - b.percentage).reverse();
     }, [categories]);
 
     function getColorForCategory(category) {
@@ -36,11 +36,10 @@ const CategoriesCard = () => {
     }
 
     const handleMouseEnter = (e, content) => {
-        const rect = e.target.getBoundingClientRect();
         setTooltip({
             visible: true,
-            x: rect.left + rect.width / 2,
-            y: rect.top - 10,
+            x: e.clientX,
+            y: e.clientY - 10,
             content,
         });
     };
@@ -53,7 +52,7 @@ const CategoriesCard = () => {
         <div className="categories-card">
             <div className="container">
                 <h2>You&apos;ve spent <span style={{ color: '#50C878' }}>{totalAmount}$</span></h2>
-                <div className="chart">
+                { transactions.length ? <div className="chart">
                     {sortedCategories.map((cat, index) => (
                         <div
                             key={index}
@@ -62,16 +61,21 @@ const CategoriesCard = () => {
                                 width: `${cat.percentage}%`,
                                 backgroundColor: cat.color,
                             }}
-                            onMouseEnter={(e) => handleMouseEnter(e, `${cat.name}: ${cat.amount}$`)}
+                            onMouseEnter={(e) => handleMouseEnter(e, `${cat.name}: ${cat.amount}$ (${cat.percentage}%)`)}
                             onMouseLeave={handleMouseLeave}
                         >
                             {Number(cat.percentage).toFixed(0)}%
                         </div>
                     ))}
                 </div>
+                    : <></>
+                }
                 <div className="categories-list">
                     {categories.map((cat, index) => (
-                        <div key={index} className="category-item">
+                        <div key={index} className="category-item"
+                             onMouseEnter={(e) => handleMouseEnter(e, `${cat.name}: ${cat.amount}$ (${cat.percentage}%)`)}
+                             onMouseLeave={handleMouseLeave}
+                        >
                             <span
                                 className="category-color"
                                 style={{ backgroundColor: cat.color }}
@@ -81,6 +85,14 @@ const CategoriesCard = () => {
                         </div>
                     ))}
                 </div>
+                {
+                    !transactions.length &&
+                    <div>
+                        <h2 style={{marginBottom: 10}}>You don&apos;t have any expenses yet!</h2>
+                        <p>Click the button in the lower right corner!</p>
+                    </div>
+
+                }
             </div>
             {tooltip.visible && (
                 <div
@@ -93,6 +105,7 @@ const CategoriesCard = () => {
                     {tooltip.content}
                 </div>
             )}
+
         </div>
     );
 };

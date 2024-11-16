@@ -1,5 +1,4 @@
 .categories-card {
-    position: relative;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 12px;
@@ -82,18 +81,20 @@
 }
 
 .tooltip {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    white-space: nowrap;
-    pointer-events: none;
-    transform: translate(-50%, -100%);
-    z-index: 1000;
-    transition: opacity 0.2s ease-in-out;
+    position: absolute; /* Ensure tooltip is positioned dynamically */
+    background: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+    color: white; /* White text */
+    padding: 5px 10px; /* Padding around the content */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent text from wrapping */
+    pointer-events: none; /* Ignore mouse events on the tooltip */
+    transform: translate(-50%, -20px); /* Center horizontally relative to the mouse */
+    z-index: 1000; /* Ensure tooltip appears above other elements */
+    opacity: 1; /* Ensure visibility */
+    transition: opacity 0.2s ease-in-out; /* Smooth fade-in/out */
 }
+
 
 .tooltip.visible {
     opacity: 1;

@@ -1,9 +1,8 @@
 import './TransactionItem.css';
-import {useMemo} from "react";
 
-const TransactionItem = ({ transaction }) => {
+const TransactionItem = ({ transaction, average }) => {
     const { name, date, amount } = transaction;
-    const amountClass = amount >= 0 ? "amount-cell positive" : "amount-cell negative";
+    const amountClass = amount <= average ? "amount-cell positive" : "amount-cell negative";
 
     const formattedDate = new Intl.DateTimeFormat("en-US", {
         year: "numeric",

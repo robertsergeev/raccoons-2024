@@ -1,9 +1,15 @@
 import {useSelector} from "react-redux";
 import TransactionItem from "../TransactionItem/TransactionItem";
 import "./TransactionsList.css";
+import {useMemo} from "react";
 
 const TransactionsList = () => {
     const {transactions} = useSelector(state => state.transactions)
+
+    const averageExpense = useMemo(() => {
+        const allExpenses = transactions.map(transaction => transaction.amount)
+        return (allExpenses.reduce((acc, value) => acc + value, 0) / allExpenses.length).toFixed(2)
+    }, [transactions])
 
     return (
         <div className="transactions-list">
@@ -16,12 +22,12 @@ const TransactionsList = () => {
                         <tr>
                             <th>Description</th>
                             <th>Date</th>
-                            <th>Amount</th>
+                            <th>Amount <span className='average-expense'>(Avg: {averageExpense}$)</span></th>
                         </tr>
                         </thead>
                         <tbody>
                         {transactions.map(transaction => (
-                            <TransactionItem key={transaction.id} transaction={transaction}/>
+                            <TransactionItem average={averageExpense} key={transaction.id} transaction={transaction}/>
                         ))}
                         </tbody>
                     </table>

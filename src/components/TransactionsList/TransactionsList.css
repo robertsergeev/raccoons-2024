@@ -1,43 +1,62 @@
 .transactions-list {
     max-width: 700px;
-    width: 100%;
     margin: 0 auto;
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    font-family: Arial, sans-serif;
 }
 
 .transaction-panel h2 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 5px;
+    font-size: 1.4rem;
+    color: #333333;
+    margin-bottom: 8px;
 }
 
 .transaction-panel p {
-    color: #666;
-    margin-top: -10px;
-    font-size: 0.9em;
+    color: #777777;
+    margin-bottom: 16px;
+    font-size: 1rem;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 16px;
+    font-size: 1rem;
 }
 
 table th,
 table td {
     text-align: left;
-    padding: 12px 8px;
-    font-size: 0.9em;
+    padding: 12px;
 }
 
 table th {
-    color: #999;
+    color: #888888;
+    font-size: 0.9rem;
     text-transform: uppercase;
+    border-bottom: 2px solid #eeeeee;
 }
 
-table tr:not(:last-child) {
-    border-bottom: 1px solid #eaeaea;
+table tr:not(:last-child) td {
+    border-bottom: 1px solid #f3f3f3;
+}
+
+table td {
+    color: #555555;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .transactions-list {
+        padding: 16px;
+    }
+
+    table th,
+    table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
 }

@@ -13,7 +13,6 @@ const TransactionsSlice = createSlice({
     name: 'transactions',
     initialState,
     reducers: {
-        
     }
 })
 

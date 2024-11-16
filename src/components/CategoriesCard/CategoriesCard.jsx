@@ -1,5 +1,6 @@
 import './CategoriesCard.css';
 import {useSelector} from 'react-redux';
+import {useMemo} from "react";
 
 const CategoriesCard = () => {
     const {transactions} = useSelector(state => state.transactions)
@@ -18,12 +19,17 @@ const CategoriesCard = () => {
         color: getColorForCategory(category),
     }));
 
+    const sortedCategories = useMemo(() => {
+        return categories.sort((a, b) => a.percentage - b.percentage).reverse()
+    }, [categories])
+
     function getColorForCategory(category) {
         const colors = {
             food: '#FFA07A',
             shopping: '#87CEFA',
             home: '#FFD700',
             transport: '#90EE90',
+            entertainment: '#FFA500',
         };
         return colors[category] || '#D3D3D3';
     }
@@ -33,7 +39,7 @@ const CategoriesCard = () => {
             <div className="container">
                 <h2>You&apos;ve spent <span style={{color: '#50C878'}}>{totalAmount}$</span></h2>
                 <div className="chart">
-                    {categories.map((cat, index) => (
+                    {sortedCategories.map((cat, index) => (
                         <div
                             key={index}
                             className="chart-segment"
@@ -49,10 +55,10 @@ const CategoriesCard = () => {
                 <div className="categories-list">
                     {categories.map((cat, index) => (
                         <div key={index} className="category-item">
-            <span
-                className="category-color"
-                style={{backgroundColor: cat.color}}
-            ></span>
+                        <span
+                            className="category-color"
+                            style={{backgroundColor: cat.color}}
+                        ></span>
                             <span className="category-name">{cat.name}</span>
                             <span className="category-percentage">{cat.percentage}%</span>
                         </div>

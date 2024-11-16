@@ -13,8 +13,13 @@ const TransactionsSlice = createSlice({
     name: 'transactions',
     initialState,
     reducers: {
+        addNewTransaction: (state, action) => {
+            state.transactions.unshift(action.payload)
+        }
     }
 })
 
 
-export const TransactionsReducer = TransactionsSlice.reducer; 
+export const TransactionsReducer = TransactionsSlice.reducer;
+const TransactionActions = TransactionsSlice.actions;
+export const {addNewTransaction} = TransactionActions

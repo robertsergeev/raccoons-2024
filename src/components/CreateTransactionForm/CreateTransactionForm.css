@@ -1,0 +1,26 @@
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.create-form input{
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.form-section{
+    display: flex;
+    gap: 20px;
+}
+
+.create-form button {
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #87CEFA;
+    color: #fff;
+}

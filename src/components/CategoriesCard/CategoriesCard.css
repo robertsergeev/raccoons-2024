@@ -32,6 +32,10 @@
     font-size: 14px;
 }
 
+.chart-segment:not(:first-child) {
+    border-left: 1px solid #fff;
+}
+
 .categories-list {
     display: flex;
     flex-direction: column;

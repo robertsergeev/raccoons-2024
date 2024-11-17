@@ -1,8 +1,8 @@
-# React + Vite
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+App for tracking you expenses! 
 
-Currently, two official plugins are available:
+<a href="https://finhelp.netlify.app/">Project Preview</a> <br>
+<a href="https://t.me/finhelp2024_bot/app">Telegram Web App</a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`| Made for the Raccoons Hackathon 2024`
